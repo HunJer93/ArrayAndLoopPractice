@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array and Loop Practice</title>
+	<script type="text/javascript">
+		//declare books array
+		let books = ["War and Peace", "Huckleberry Finn", "The Return of the Native", "A Christmas Carol", "Exodus"];
+		//declare authors array set to books.length
+		let authors = new Array(books.length);
+
+		//for loop populating authors based at the proper books index
+		for(let i =0; i < books.length; i++ ) {
+			authors[i] = prompt("Who wrote (last name only) " + books[i] + "?");
+		}//end for loop to populate author elements
+
+		//declare author_title array that combines books and authors
+		let author_title = new Array(books.length);
+		for(let i =0; i < books.length; i++){
+			author_title[i] = authors[i] + " wrote " + books[i];
+		}//end for loop assigning variables to author_title array
+
+		//the display() function displays our outputs to the screen. 
+		function display(){
+			//print asterisks to separate lines
+			document.write("<b>********************************************</b><br>");
+			//for loop displaying book names and their authors
+			for(let i = 0; i< books.length; i++){
+				document.write("<b>Book: </b>"+ books[i] + "<b> Author: </b>" + authors[i] + "<br>");
+			}//end for loop displaying books and authors
+
+			//print asterisks to separate lines
+			document.write("<b>********************************************</b><br>");
+
+			//for loop displaying author_title
+			for(let i = 0; i < author_title.length; i++){
+				document.write(author_title[i] + "<br>");
+			}//end for loop displaying author_title array
+
+			//print asterisks to separate lines
+			document.write("<b>********************************************</b><br>");
+
+			//for loop displaying author_title with the last element (Uris) dropped
+			author_title.pop();
+			for(let i = 0; i < author_title.length; i++){
+				document.write(author_title[i] + "<br>");
+			}//end for loop displaying author_title array WITHOUT Uris
+
+			//print asterisks to separate lines
+			document.write("<b>********************************************</b><br>");
+
+			//sort the authors in alphabetic order and print using a for loop
+			author_title.sort();
+			for(let i = 0; i < author_title.length; i++){
+				document.write(author_title[i] + "<br>");
+			}//end for loop displaying author_title in alphabetical order
+
+			//print asterisks to separate lines
+			document.write("<b>********************************************</b><br>");
+		}//end display() function
+	</script>
+</head>
+<body>
+<script type="text/javascript">
+	display();
+</script>
+</body>
+</html>
